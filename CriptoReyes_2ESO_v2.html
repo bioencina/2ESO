@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CriptoReyes · Situación de Aprendizaje</title>
+<style>
+:root{--azul:#123b5d;--azul2:#eaf2f7;--gris:#f5f6f7;--borde:#c9d5dd;--texto:#17232d}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f3f5f6;color:var(--texto);line-height:1.55}
+main{max-width:1050px;margin:auto;padding:24px}
+header{background:white;border-top:8px solid var(--azul);padding:30px;border-radius:12px;margin-bottom:18px}
+h1{margin:0;color:var(--azul);font-size:clamp(2rem,6vw,4rem);letter-spacing:.02em}
+.subtitle{font-size:1.25rem;margin:.2rem 0 0}
+.intro{margin-top:20px;font-size:1.08rem}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:18px 0}
+button.card{width:100%;text-align:left;background:white;border:1px solid var(--borde);border-left:6px solid var(--azul);border-radius:10px;padding:16px;cursor:pointer;font-size:1rem;color:var(--texto)}
+button.card:hover,button.card:focus{background:var(--azul2);outline:2px solid var(--azul)}
+.num{display:inline-grid;place-items:center;background:var(--azul);color:white;width:30px;height:30px;border-radius:50%;font-weight:bold;margin-right:8px}
+.panel{display:none;background:white;border:1px solid var(--borde);border-radius:12px;padding:24px;margin:12px 0 20px}
+.panel.open{display:block}
+.panel h2{color:var(--azul);margin-top:0}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:bold;margin:18px 0}
+.flow span{background:var(--azul2);padding:9px 12px;border-radius:7px}
+.box{border:2px solid var(--azul);padding:15px;border-radius:9px;background:#fafcfd;margin:15px 0}
+.steps{display:grid;gap:10px}
+.step{background:var(--gris);border-left:4px solid var(--azul);padding:12px 15px;border-radius:6px}
+pre{white-space:pre-wrap;background:#101820;color:#f4f7f8;padding:18px;border-radius:9px;font-size:1rem;line-height:1.45;overflow:auto}
+.matrix{border-collapse:collapse;margin:18px auto;font-size:1.15rem}
+.matrix th,.matrix td{width:42px;height:42px;text-align:center;border:1px solid #657784}
+.matrix th{background:var(--azul);color:white}
+.note{text-align:center;font-weight:bold;color:var(--azul);font-size:1.1rem}
+.algo-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.algo-tabs button{border:1px solid var(--azul);background:white;color:var(--azul);padding:10px 14px;border-radius:7px;font-weight:bold;cursor:pointer}.algo-tabs button.active{background:var(--azul);color:white}.algo-view{display:none}.algo-view.active{display:block}.flowchart{display:flex;flex-direction:column;align-items:center;gap:8px;margin:18px auto;max-width:650px}.fc{background:white;border:2px solid var(--azul);padding:10px 18px;border-radius:8px;text-align:center;min-width:270px}.fc.terminal{border-radius:30px;background:var(--azul2);font-weight:bold}.fc.decision{transform:rotate(45deg);width:155px;height:155px;min-width:0;display:grid;place-items:center;margin:25px}.fc.decision span{transform:rotate(-45deg);display:block;width:115px}.arrow{font-size:1.5rem;color:var(--azul);font-weight:bold}.branch{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%;align-items:start}.branch>div{display:flex;flex-direction:column;align-items:center;gap:8px}.branch-label{font-weight:bold;color:var(--azul)}
+@media(max-width:600px){main{padding:10px}.panel,header{padding:18px}.matrix th,.matrix td{width:34px;height:34px}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div>Situación de Aprendizaje · 2.º ESO</div>
+  <h1>CRIPTOREYES</h1>
+  <p class="subtitle">Del algoritmo al tablero: ejecuta, descubre y descifra</p>
+  <p class="intro">Vamos a poner en práctica lo que hemos aprendido. Tendréis que convertir un algoritmo en acciones reales utilizando un tablero de ajedrez, una pieza y cajas para representar las variables. Cada grupo descubrirá una letra. Solo reuniendo los resultados de todos podréis descubrir la palabra secreta.</p>
+  <div class="flow"><span>ALGORITMO</span> → <span>VARIABLES</span> → <span>TABLERO</span> → <span>CASILLA</span> → <span>MATRIZ</span> → <span>PALABRA</span></div>
+</header>
+
+<section class="menu">
+<button class="card" onclick="toggle('reto')"><span class="num">1</span><b>Reto o problema</b><br>¿Qué tenemos que conseguir?</button>
+<button class="card" onclick="toggle('producto')"><span class="num">2</span><b>Producto final</b><br>¿Cuál será el resultado?</button>
+<button class="card" onclick="toggle('aprendizajes')"><span class="num">3</span><b>Aprendizajes</b><br>¿Qué vamos a practicar?</button>
+<button class="card" onclick="toggle('desarrollo')"><span class="num">4</span><b>Desarrollo</b><br>¿Qué tenemos que hacer?</button>
+<button class="card" onclick="toggle('algoritmo')"><span class="num">5</span><b>Algoritmo</b><br>Abrir las instrucciones</button>
+<button class="card" onclick="toggle('matriz')"><span class="num">6</span><b>Matriz de letras</b><br>Buscar la letra final</button>
+<button class="card" onclick="toggle('recursos')"><span class="num">7</span><b>Organización y recursos</b><br>¿Qué necesitamos?</button>
+</section>
+
+<section id="reto" class="panel">
+<h2>1. Reto o problema</h2>
+<p>Todos los grupos trabajaréis con el mismo algoritmo, pero el resultado dependerá de los datos utilizados durante su ejecución.</p>
+<div class="box"><b>¿Conseguirá cada grupo ejecutar correctamente el algoritmo, llegar a su casilla y descubrir entre todos la palabra secreta?</b></div>
+<p>Un movimiento incorrecto puede llevaros a una casilla equivocada, así que tendréis que seguir las instrucciones con precisión.</p>
+</section>
+
+<section id="producto" class="panel">
+<h2>2. Producto o resultado final</h2>
+<p>Cada grupo llegará a una <b>casilla final</b>. Sus coordenadas servirán para buscar una letra en la matriz.</p>
+<div class="flow"><span>CASILLA FINAL</span> → <span>MATRIZ</span> → <span>LETRA</span></div>
+<p>Después colocaremos las letras siguiendo el número de cada grupo. Si el proceso es correcto, aparecerá la <b>palabra secreta</b> y la clase habrá conseguido los <b>CRIPTOREYES</b>.</p>
+</section>
+
+<section id="aprendizajes" class="panel">
+<h2>3. Aprendizajes que vamos a poner en práctica</h2>
+<div class="flow"><span>ALGORITMO</span><span>CONSTANTE</span><span>VARIABLE</span><span>SECUENCIA</span><span>REPETICIÓN</span><span>CONDICIÓN</span></div>
+<p>Las variables dejarán de ser algo abstracto: cada una tendrá su propia <b>caja</b>. Pondréis su nombre en una pegatina y guardaréis dentro un papel con su valor.</p>
+<div class="box"><b>PASOS = 1</b> → el algoritmo ejecuta <b>PASOS = PASOS + 1</b> → sustituimos el papel → <b>PASOS = 2</b></div>
+<p>Cuando cambie una variable en el algoritmo, también deberá cambiar el valor guardado en su caja.</p>
+</section>
+
+<section id="desarrollo" class="panel">
+<h2>4. Desarrollo de la actividad</h2>
+<div class="steps">
+<div class="step"><b>1 · PREPARA.</b> Toma un tablero de ajedrez y una pieza. Lee el algoritmo completo antes de comenzar.</div>
+<div class="step"><b>2 · REPRESENTA.</b> Identifica las variables. Utiliza una caja para cada una, pon su nombre con una pegatina y escribe su valor en un papel.</div>
+<div class="step"><b>3 · EJECUTA.</b> Coloca la pieza en SALIDA y sigue el algoritmo instrucción por instrucción. Actualiza los papeles cuando cambien las variables.</div>
+<div class="step"><b>4 · LOCALIZA.</b> Cuando termine el algoritmo, no muevas la pieza. Identifica la columna y la fila de la casilla final.</div>
+<div class="step"><b>5 · DESCIFRA.</b> Busca esa coordenada en la matriz de letras y anota la letra de vuestro grupo.</div>
+<div class="step"><b>6 · COMPARTE.</b> Ordenad las letras según el número de grupo e intentad descubrir la palabra secreta.</div>
+</div>
+</section>
+
+<section id="algoritmo" class="panel">
+<h2>5. Algoritmo CRIPTOREYES</h2>
+<p>El mismo algoritmo está representado de dos formas. Puedes cambiar de una a otra.</p>
+<div class="algo-tabs">
+<button id="btnPseudo" class="active" onclick="showAlgo('pseudo')">Pseudocódigo</button>
+<button id="btnFlujo" onclick="showAlgo('flujo')">Diagrama de flujo</button>
+</div>
+<div id="pseudo" class="algo-view active">
+<pre>ALGORITMO "PALABRA SECRETA"
+
+CONSTANTE GRUPO = número de tu grupo
+VARIABLE PASOS = 1
+VARIABLE cifrado_alfabeto = 3
+
+Colocar la ficha en SALIDA
+Orientarla hacia ARRIBA
+
+Avanzar GRUPO casillas
+Girar a la DERECHA
+
+REPETIR 2 VECES
+    Avanzar PASOS casillas
+    PASOS = PASOS + 1
+FIN REPETIR
+
+SI la casilla en la que estás es NEGRA ENTONCES
+    Girar a la IZQUIERDA
+SI NO
+    Girar a la DERECHA
+FIN SI
+
+Avanzar 1 casilla
+Leer la letra de la casilla final
+
+FIN</pre>
+</div>
+<div id="flujo" class="algo-view">
+<div class="flowchart">
+<div class="fc terminal">INICIO</div><div class="arrow">↓</div>
+<div class="fc">GRUPO = número de tu grupo<br>PASOS = 1<br>cifrado_alfabeto = 3</div><div class="arrow">↓</div>
+<div class="fc">Colocar ficha en SALIDA<br>Orientar hacia ARRIBA</div><div class="arrow">↓</div>
+<div class="fc">Avanzar GRUPO casillas</div><div class="arrow">↓</div>
+<div class="fc">Girar a la DERECHA</div><div class="arrow">↓</div>
+<div class="fc">REPETIR 2 VECES:<br>Avanzar PASOS casillas<br>PASOS = PASOS + 1</div><div class="arrow">↓</div>
+<div class="fc decision"><span>¿La casilla es NEGRA?</span></div>
+<div class="branch">
+<div><div class="branch-label">SÍ</div><div class="fc">Girar a la IZQUIERDA</div></div>
+<div><div class="branch-label">NO</div><div class="fc">Girar a la DERECHA</div></div>
+</div><div class="arrow">↓</div>
+<div class="fc">Avanzar 1 casilla</div><div class="arrow">↓</div>
+<div class="fc">Leer la letra de la casilla final</div><div class="arrow">↓</div>
+<div class="fc terminal">FIN</div>
+</div>
+</div>
+</section>
+
+<section id="matriz" class="panel">
+<h2>6. Matriz de letras</h2>
+<p>Cuando conozcáis vuestra casilla final, buscad su columna y fila. <b>No miréis la matriz antes de terminar el algoritmo.</b></p>
+<table class="matrix">
+<tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th></tr>
+<tr><th>8</th><td>T</td><td>M</td><td>Q</td><td>F</td><td>Z</td><td>P</td><td>L</td><td>B</td></tr>
+<tr><th>7</th><td>A</td><td>X</td><td>C</td><td>K</td><td>E</td><td>R</td><td>D</td><td>O</td></tr>
+<tr><th>6</th><td>H</td><td>G</td><td>J</td><td>D</td><td>N</td><td>V</td><td>S</td><td>I</td></tr>
+<tr><th>5</th><td>L</td><td>P</td><td>T</td><td>O</td><td>M</td><td>C</td><td>Q</td><td>Z</td></tr>
+<tr><th>4</th><td>D</td><td>E</td><td>R</td><td>H</td><td>X</td><td>I</td><td>F</td><td>N</td></tr>
+<tr><th>3</th><td>O</td><td>K</td><td>S</td><td>Y</td><td>G</td><td>U</td><td>J</td><td>H</td></tr>
+<tr><th>2</th><td>V</td><td>N</td><td>I</td><td>D</td><td>P</td><td>T</td><td>A</td><td>C</td></tr>
+<tr><th>1</th><td>Z</td><td>F</td><td>M</td><td>O</td><td>Q</td><td>B</td><td>E</td><td>R</td></tr>
+</table>
+<p class="note">Casilla final → coordenada → letra del grupo</p>
+</section>
+
+<section id="recursos" class="panel">
+<h2>7. Organización y recursos</h2>
+<p>Trabajaréis en <b>pequeños grupos</b>. Cada grupo será responsable de una parte del mensaje final.</p>
+<div class="box"><b>Necesitaréis:</b> tablero de ajedrez · una pieza · algoritmo · cajas · pegatinas · papeles para los valores · matriz de letras.</div>
+<p>Cada grupo puede resolver su recorrido de forma independiente, pero necesitaréis <b>todas las letras</b> para completar el reto.</p>
+</section>
+</main>
+<script>
+function showAlgo(which){
+ document.querySelectorAll('.algo-view').forEach(x=>x.classList.remove('active'));
+ document.querySelectorAll('.algo-tabs button').forEach(x=>x.classList.remove('active'));
+ document.getElementById(which).classList.add('active');
+ document.getElementById(which==='pseudo'?'btnPseudo':'btnFlujo').classList.add('active');
+}
+function toggle(id){
+ const el=document.getElementById(id);
+ const was=el.classList.contains('open');
+ document.querySelectorAll('.panel').forEach(p=>p.classList.remove('open'));
+ if(!was){
+   el.classList.add('open');
+   setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),50);
+ }
+}
+</script>
+</body>
+</html>
