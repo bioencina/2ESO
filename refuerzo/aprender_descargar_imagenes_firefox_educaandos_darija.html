@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aprendo a descargar imágenes · Firefox · EducAndOS</title>
+<style>
+:root{--p:#5b21b6;--p2:#ede9fe;--g:#087f5b;--b:#0b69a3;--ink:#172033;--muted:#5d6677;--line:#d9deea;--bg:#f5f7fb}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+header{background:linear-gradient(135deg,#4c1d95,#7c3aed);color:#fff;padding:26px 16px}.wrap{max-width:920px;margin:auto}
+h1{margin:0;font-size:clamp(28px,5vw,42px)} header p{font-size:18px;margin:6px 0 0}
+.toolbar{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);padding:9px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+button,a.btn{border:0;border-radius:11px;padding:10px 14px;font-weight:bold;cursor:pointer;text-decoration:none}.purple{background:var(--p);color:#fff}.green{background:var(--g);color:#fff}.soft{background:var(--p2);color:#4c1d95}
+main{max-width:920px;margin:18px auto;padding:0 13px 80px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:19px;margin:15px 0;box-shadow:0 4px 13px #0000000a}
+.step{display:flex;gap:13px}.n{width:48px;height:48px;flex:0 0 48px;border-radius:50%;background:var(--p);color:#fff;display:grid;place-items:center;font-weight:bold;font-size:22px}
+h2{margin-top:0}.es{padding:10px 12px;background:#f8fafc;border-radius:10px}.ar{direction:rtl;text-align:right;padding:10px 12px;background:#fff8e8;border-radius:10px;margin-top:8px;font-family:Tahoma,Arial,sans-serif}
+.action{border-left:5px solid var(--b);background:#eef8ff;padding:11px 13px;border-radius:8px;margin:12px 0}.ok{border-left:5px solid var(--g);background:#ecfdf5;padding:11px 13px;border-radius:8px;margin:12px 0}
+.key{font-family:monospace;background:#eef0f4;padding:3px 7px;border-radius:6px;font-weight:bold}.warn{background:#fff5f5;border-left:5px solid #d9485f;padding:12px;border-radius:8px}
+.searchbox{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.searchbox input{flex:1;min-width:220px;padding:12px;border:2px solid #b7bfce;border-radius:10px;font-size:16px}
+.searchbox button{background:#146ebe;color:#fff}
+.task{border:2px solid #d8d0fa;border-radius:15px;padding:15px;margin:14px 0}.task h3{margin:0 0 6px}.upload{display:block;border:2px dashed #8b95a7;border-radius:12px;padding:15px;background:#fafbfe;margin-top:10px}
+.upload input{width:100%;margin-top:8px}.preview{max-width:220px;max-height:160px;display:none;margin:12px auto 0;border-radius:10px;border:1px solid #ccc}
+.status{font-weight:bold;margin-top:8px}.done{color:var(--g)}.hidden{display:none!important}
+#floatTrans{position:fixed;right:15px;bottom:15px;z-index:20}
+.progress{height:14px;background:#e5e7eb;border-radius:20px;overflow:hidden}.bar{height:100%;width:0;background:var(--g);transition:.2s}
+.small{font-size:14px;color:var(--muted)}
+@media(max-width:600px){.card{padding:14px}.n{width:40px;height:40px;flex-basis:40px}.step{gap:9px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>🖼️ Aprendo a descargar imágenes</h1>
+<p>Firefox + EducAndOS · نتعلم كيفاش نحمّلو الصور</p>
+</div></header>
+
+<div class="toolbar">
+<button class="soft" onclick="toggleDarija()">🌍 Mostrar / ocultar darija</button>
+<button class="green" onclick="traducir()">🔄 TRADUCTOR</button>
+</div>
+
+<main>
+<section class="card">
+<h2>🎯 Hoy vas a aprender</h2>
+<div class="es">Buscar una imagen en Internet → descargarla → encontrarla en <b>Descargas</b> → subirla a una actividad.</div>
+<div class="ar">اليوم غادي نتعلمو: نقلبو على صورة فالإنترنت ← نحمّلوها ← نلقاوها فـ <b>Descargas</b> ← ونطلعوها للنشاط.</div>
+<div class="warn"><b>IMPORTANTE:</b> En esta actividad descarga solamente imágenes <span class="key">.png</span>, <span class="key">.jpg</span> o <span class="key">.jpeg</span>.</div>
+<div class="ar">مهم: فهاد النشاط حمّلي غير الصور اللي كيساليو بـ <b>.png</b> أو <b>.jpg</b> أو <b>.jpeg</b>.</div>
+</section>
+
+<section class="card"><div class="step"><div class="n">1</div><div style="flex:1">
+<h2>Abre Firefox</h2>
+<div class="es">👀 Busca el icono de <b>Firefox</b> en EducAndOS y ábrelo.</div>
+<div class="ar">قلّبي على أيقونة <b>Firefox</b> فـ EducAndOS وفتحي المتصفح.</div>
+<div class="ok">✅ Cuando veas la ventana de Firefox, sigue al paso 2.</div>
+</div></div></section>
+
+<section class="card"><div class="step"><div class="n">2</div><div style="flex:1">
+<h2>Busca una imagen en Internet</h2>
+<div class="es">1. Pulsa la barra de direcciones de Firefox.<br>2. Escribe lo que quieres buscar. Ejemplo: <span class="key">fresa png</span>.<br>3. Pulsa <span class="key">Enter ↵</span>.<br>4. En el buscador, entra en la sección <b>Imágenes</b>.</div>
+<div class="ar">1. كليكي على شريط العنوان ديال Firefox.<br>2. كتبي شنو بغيتي تقلبي عليه. مثال: <b>fresa png</b>.<br>3. ضغطي على <b>Enter ↵</b>.<br>4. فمحرك البحث دخلي لقسم <b>Imágenes</b>.</div>
+<div class="action">💡 Para encontrar el formato que queremos, puedes añadir al final de la búsqueda: <b>png</b>, <b>jpg</b> o <b>jpeg</b>.</div>
+<div class="ar">باش تلقاي النوع اللي بغينا، زيدي فآخر البحث: <b>png</b> أو <b>jpg</b> أو <b>jpeg</b>.</div>
+</div></div></section>
+
+<section class="card"><div class="step"><div class="n">3</div><div style="flex:1">
+<h2>Descarga la imagen</h2>
+<div class="es">👆 Pulsa la imagen para verla mejor.<br>🖱️ Coloca el ratón encima de la imagen.<br>🖱️ Pulsa el <b>botón derecho</b> del ratón.<br>👆 Elige <b>Guardar imagen como…</b>.</div>
+<div class="ar">كليكي على الصورة باش تشوفيها مزيان. حطي الفأرة فوق الصورة، ديري <b>كليك بالزر اليمين</b>، واختاري <b>Guardar imagen como…</b>.</div>
+<div class="warn">⚠️ Antes de guardar, mira el nombre del archivo. Debe terminar en <b>.png</b>, <b>.jpg</b> o <b>.jpeg</b>. Si aparece otro tipo, busca otra imagen.</div>
+<div class="ar">قبل ما تحفظي، شوفي سميّة الملف. خاصها تسالي بـ <b>.png</b> أو <b>.jpg</b> أو <b>.jpeg</b>. إلا كان نوع آخر، قلّبي على صورة أخرى.</div>
+</div></div></section>
+
+<section class="card"><div class="step"><div class="n">4</div><div style="flex:1">
+<h2>Ponle un nombre fácil</h2>
+<div class="es">En la ventana de guardar puedes cambiar el nombre. Usa un nombre corto que explique qué es.</div>
+<div class="action">🍓 <span class="key">fresa.png</span> &nbsp; 🐱 <span class="key">gato.jpg</span> &nbsp; ⚽ <span class="key">futbol.jpeg</span></div>
+<div class="es">No borres <b>.png</b>, <b>.jpg</b> o <b>.jpeg</b>. Después pulsa <b>Guardar</b>.</div>
+<div class="ar">قدري تبدّلي سميّة الصورة وتخليها سهلة. ما تمسحيش <b>.png</b> ولا <b>.jpg</b> ولا <b>.jpeg</b>. من بعد كليكي على <b>Guardar</b>.</div>
+</div></div></section>
+
+<section class="card"><div class="step"><div class="n">5</div><div style="flex:1">
+<h2>¿Dónde está ahora la imagen?</h2>
+<div class="es">La imagen está guardada en tu ordenador. Vamos a comprobarlo.</div>
+<div class="action">📁 Abre el explorador de archivos de EducAndOS.<br>👆 Entra en la carpeta <b>Descargas</b>.<br>👀 Busca el nombre que acabas de guardar.</div>
+<div class="ar">الصورة دابا محفوظة فالحاسوب. فتحي مستكشف الملفات ديال EducAndOS، دخلي لمجلد <b>Descargas</b> وقلّبي على السمية اللي حفظتي.</div>
+<div class="ok">✅ ¿Ves tu imagen? Perfecto. Ya sabes dónde están los archivos descargados.</div>
+</div></div></section>
+
+<section class="card">
+<h2>🏋️ Ahora practica tú</h2>
+<div class="es">Vas a buscar y descargar <b>4 imágenes diferentes</b>. Después las subirás aquí para demostrar que sabes encontrarlas.</div>
+<div class="ar">دابا غادي تقلّبي وتحملّي <b>4 صور مختلفين</b>. من بعد طلّعيهم هنا باش نتأكدو بلي عرفتي فين تلقايهم.</div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+<p id="counter"><b>0 de 4 imágenes comprobadas</b></p>
+
+<div class="task">
+<h3>1 · 🍓 Una fruta / شي فاكهة</h3>
+<p>Busca una fruta que te guste. / قلّبي على شي فاكهة كتعجبك.</p>
+<label class="upload">📤 <b>SUBIR FOTO DESDE DESCARGAS</b><br><span class="ar">طلّعي الصورة من مجلد Descargas</span>
+<input type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" onchange="checkFile(this,'p1','s1')"></label>
+<img id="p1" class="preview"><div id="s1" class="status"></div>
+</div>
+
+<div class="task">
+<h3>2 · 🐶 Un animal / شي حيوان</h3>
+<p>Busca un animal. / قلّبي على شي حيوان.</p>
+<label class="upload">📤 <b>SUBIR FOTO DESDE DESCARGAS</b><br><span class="ar">طلّعي الصورة من مجلد Descargas</span>
+<input type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" onchange="checkFile(this,'p2','s2')"></label>
+<img id="p2" class="preview"><div id="s2" class="status"></div>
+</div>
+
+<div class="task">
+<h3>3 · ⚽ Un deporte / شي رياضة</h3>
+<p>Busca una imagen relacionada con un deporte. / قلّبي على صورة ديال شي رياضة.</p>
+<label class="upload">📤 <b>SUBIR FOTO DESDE DESCARGAS</b><br><span class="ar">طلّعي الصورة من مجلد Descargas</span>
+<input type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" onchange="checkFile(this,'p3','s3')"></label>
+<img id="p3" class="preview"><div id="s3" class="status"></div>
+</div>
+
+<div class="task">
+<h3>4 · 🌸 Algo que te guste / شي حاجة كتعجبك</h3>
+<p>Elige tú el tema. / اختاري نتي الموضوع.</p>
+<label class="upload">📤 <b>SUBIR FOTO DESDE DESCARGAS</b><br><span class="ar">طلّعي الصورة من مجلد Descargas</span>
+<input type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" onchange="checkFile(this,'p4','s4')"></label>
+<img id="p4" class="preview"><div id="s4" class="status"></div>
+</div>
+
+<div id="final" class="ok hidden"><b>🎉 ¡CONSEGUIDO!</b><br>Has descargado y localizado las 4 imágenes.<div class="ar">برافو! حمّلتي ولقيتي الأربع صور.</div></div>
+<p class="small">Las imágenes se muestran solo en esta página para comprobar el ejercicio; esta actividad no las envía a Internet.</p>
+</section>
+
+<section class="card">
+<h2>🆘 Traductor / المترجم</h2>
+<div class="es">Si no entiendes una palabra, pulsa el botón verde <b>TRADUCTOR</b>. Se abre un traductor en otra pestaña para ayudarte con castellano ↔ árabe. La guía de esta página está escrita también en darija.</div>
+<div class="ar">إلا ما فهمتيش شي كلمة، كليكي على زر <b>TRADUCTOR</b>. غادي يتحل المترجم فصفحة جديدة باش يعاونك بين الإسبانية والعربية. الشرح هنا مكتوب حتى بالدارجة.</div>
+</section>
+</main>
+
+<button id="floatTrans" class="green" onclick="traducir()">🔄 TRADUCTOR</button>
+
+<script>
+let darija=true, okFiles=new Set();
+function toggleDarija(){darija=!darija;document.querySelectorAll('.ar').forEach(x=>x.classList.toggle('hidden',!darija))}
+function traducir(){window.open('https://translate.google.com/?sl=es&tl=ar&op=translate','_blank','noopener')}
+function checkFile(input,previewId,statusId){
+ const p=document.getElementById(previewId),s=document.getElementById(statusId);
+ if(!input.files.length)return;
+ const f=input.files[0], ext=f.name.split('.').pop().toLowerCase();
+ if(!['png','jpg','jpeg'].includes(ext)){
+   s.textContent='❌ Este archivo no es PNG, JPG o JPEG. Busca otra imagen.';
+   s.className='status'; input.value=''; p.style.display='none'; okFiles.delete(input.closest('.task').querySelector('h3').textContent.charAt(0)); update(); return;
+ }
+ p.src=URL.createObjectURL(f); p.style.display='block';
+ s.textContent='✅ Correcto: '+f.name; s.className='status done';
+ okFiles.add(input.closest('.task').querySelector('h3').textContent.charAt(0)); update();
+}
+function update(){
+ let n=okFiles.size; document.getElementById('bar').style.width=(n*25)+'%';
+ document.getElementById('counter').innerHTML='<b>'+n+' de 4 imágenes comprobadas</b>';
+ document.getElementById('final').classList.toggle('hidden',n!==4);
+}
+</script>
+</body></html>
